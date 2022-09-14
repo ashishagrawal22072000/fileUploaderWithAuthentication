@@ -8,9 +8,9 @@ export default function Router() {
   return (
     <BrowserRouter>
     <Routes>
-        <Route path="/register" component={<Register />} />
-        <Route path="/login" component={<Login />} />
-        <Route path="/dashboard" component={<Dashboard />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
     </BrowserRouter>    
   )

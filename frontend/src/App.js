@@ -1,9 +1,11 @@
 import React from 'react'
 import Router from './router/Router'
 
-export default function Apps() {
+export default function App() {
   return (
-    <div><Router/></div>
+    <div>
+      <Router/>
+      </div>
   )
 }
 

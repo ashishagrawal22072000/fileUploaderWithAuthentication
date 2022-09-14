@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();  
 const userModel = require('../model/user');
+const { generateToken } = require('../middleware/auth');
 router.use(bodyParser());
 
 
@@ -17,10 +18,12 @@ router.post('/register', async (req, res) => {
                 password: password
             });
             await newUser.save();
-            return res.status(201).json({message : "user registered successfully"});
+            return res.status(201).json({message : "user registered successfully", token : generateToken(newUser)}); 
         }
         
     }catch(err){
         res.status(500).json({error : err});
-    }
-})
+    } 
+});
+
+
